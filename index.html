@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LibraryTrial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header class="d-flex align-items-center justify-content-between">
+        MY LIBRARY
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Add Book</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </header>
+    <main class="d-flex align-items-center justify-content-center">
+        <table class="books-table" id="books-table">
+            <thead>
+                <tr class="books-header">
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Pages</th>
+                    <th>Read Status</th>
+                </tr>
+            </thead>
+            <tbody id="books-info">
+            </tbody>
+        </table>
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>

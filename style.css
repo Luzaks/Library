@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: white;
+    background-image: linear-gradient(to right, #051937, #082869, #34339b, #6e32c7, #b212eb);
+    letter-spacing: 0.1rem;
+}
+
+/* Header Style */
+
+header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 40px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: white;
+    padding: 0 1.5%;
+    position: sticky;
+}
+
+/* Main body of the page */
+
+main {
+    padding-top: 20px;
+}
+
+/* Table for stored books */
+
+.books-table {
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+}
+
+.books-table tr {
+    text-align: center;
+    padding: 5px 2px;
+}
+
+.books-table td {
+    font-size: 0.8em;
+}
+
+/* Dropdown Button */
+
+.dropbtn {
+    background-color: #00c9b7;
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.75em;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #4abcc9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 2px 6px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
