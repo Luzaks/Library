@@ -7,43 +7,57 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/f1eb37ec03.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="d-flex align-items-center justify-content-between">
-        MY LIBRARY
-        <div class="dropdown">
-            <button onclick="showForm()" class="dropbtn">Add Book</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
-    </header>
-    <main class="d-flex align-items-center justify-content-center">
-        <table class="books-table" id="books-table">
-            <thead>
-                <tr class="books-header">
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                    <th>Pages</th>
-                    <th>Read Status</th>
-                </tr>
-            </thead>
-            <tbody id="books-info">
-            </tbody>
-        </table>
+<header class="d-flex align-items-center justify-content-between">
+    MY LIBRARY
+    <div class="dropdown">
+        <button onclick="showForm(true)" class="dropbtn">Add Book</button>
+    </div>
+</header>
+<main class="d-flex align-items-center justify-content-center">
+    <table class="books-table" id="books-table">
+        <thead>
+        <tr class="books-header">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Pages</th>
+            <th>Read Status</th>
+            <th>Remove</th>
+        </tr>
+        </thead>
+        <tbody id="books-info">
+        </tbody>
+    </table>
 
-        <div class="form-container" id="addBook">
-            <input type="text" name="title" id="title" placeholder="Title" /><br />
-            <input type="text" name="author" id="author" placeholder="Author" /><br />
-            <input type="text" name="genre" id="genre" placeholder="Genre" /><br />
-            <input type="text" name="pages" id="pages" placeholder="Pages" /><br />
-            <input type="text" name="readStatus" id="readStatus" placeholder="Read Status"/><br />
-            <button class="dropbtn" onclick="addBookToLibrary();hideForm()">Add Book</button>
-            <button type="button" class="btn cancel" onclick="hideForm()">Close</button>
-        </div>
-    </main>
+    <div class="form-container" id="addBook">
+        <input type="text" name="title" id="title" placeholder="Title" /><br />
+        <input type="text" name="author" id="author" placeholder="Author" /><br />
+        <input type="text" name="genre" id="genre" placeholder="Genre" /><br />
+        <input type="text" name="pages" id="pages" placeholder="Pages" /><br />
+        <input type="radio" name="readStatus" id="readStatus"/>
+        <label for="readStatus"> Readed </label><br>
+        <input type="radio" name="readStatus" id="readStatus1"/>
+        <label for="readStatus1"> Not Readed</label><br>
+        <input type="radio" name="readStatus" id="readStatus2"/>
+        <label for="readStatus2"> Reading</label><br>
+        <button class="dropbtn" onclick="addBookToLibrary();hideForm()">Add Book</button>
+        <button type="button" class="btn cancel" onclick="hideForm(true)">Close</button>
+    </div>
+
+    <div class="form-container update-form" id="change-status-form">
+        <input type="radio" name="readStatus" id="readStatus3"/>
+        <label for="readStatus"> Readed </label><br>
+        <input type="radio" name="readStatus" id="readStatus4"/>
+        <label for="readStatus1"> Not Readed</label><br>
+        <input type="radio" name="readStatus" id="readStatus5"/>
+        <label for="readStatus2"> Reading</label><br>
+        <button class="dropbtn" onclick="updateStatus();hideForm()">Update Status</button>
+        <button type="button" class="btn cancel" onclick="hideForm()">Close</button>
+    </div>
+
+</main>
 </body>
 </html>

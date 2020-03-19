@@ -95,9 +95,6 @@ main {
     background-color: purple;
     padding: 15px;
     border-radius: 5px;
-}
-
-#addBook{
     display: none;
 }
 
@@ -107,8 +104,9 @@ input{
     padding: 5px;
     border-radius: 5px;
     border-color: rgba(0,0,0,0.2);
- }
+}
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+
