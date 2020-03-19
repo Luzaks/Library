@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="d-flex align-items-center justify-content-between">
         MY LIBRARY
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Add Book</button>
+            <button onclick="showForm()" class="dropbtn">Add Book</button>
             <div id="myDropdown" class="dropdown-content">
                 <a href="#">Link 1</a>
                 <a href="#">Link 2</a>
@@ -33,8 +34,16 @@
             <tbody id="books-info">
             </tbody>
         </table>
-    </main>
 
-<script src="script.js"></script>
+        <div class="form-container" id="addBook">
+            <input type="text" name="title" id="title" placeholder="Title" /><br />
+            <input type="text" name="author" id="author" placeholder="Author" /><br />
+            <input type="text" name="genre" id="genre" placeholder="Genre" /><br />
+            <input type="text" name="pages" id="pages" placeholder="Pages" /><br />
+            <input type="text" name="readStatus" id="readStatus" placeholder="Read Status"/><br />
+            <button class="dropbtn" onclick="addBookToLibrary();hideForm()">Add Book</button>
+            <button type="button" class="btn cancel" onclick="hideForm()">Close</button>
+        </div>
+    </main>
 </body>
 </html>

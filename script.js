@@ -9,7 +9,25 @@ function Book(title, author, genre, pages, readStatus) {
 }
 
 function addBookToLibrary(book) {
-    myLibrary.push(book);
+    myLibrary.push(
+        new Book(
+            document.getElementById('title').value,
+            document.getElementById('author').value,
+            document.getElementById('pages').value,
+            document.getElementById('genre').value,
+            document.getElementById('readStatus').value,
+        )
+    );
+
+    render();
+}
+
+function showForm() {
+    document.getElementById('addBook').style.display = 'block';
+}
+
+function hideForm() {
+    document.getElementById('addBook').style.display = 'none';
 }
 
 function render() {
