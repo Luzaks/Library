@@ -22,12 +22,21 @@ function addBookToLibrary(book) {
     render();
 }
 
+function cleanForm() {
+    document.getElementById('title').value = "";
+    document.getElementById('author').value = "";
+    document.getElementById('pages').value = "";
+    document.getElementById('genre').value = "";
+    document.getElementById('readStatus').value = "";
+}
+
 function showForm() {
     document.getElementById('addBook').style.display = 'block';
 }
 
 function hideForm() {
     document.getElementById('addBook').style.display = 'none';
+    cleanForm();
 }
 
 function render() {
