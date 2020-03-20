@@ -48,7 +48,7 @@ function hideForm() {
 }
 
 function render() {
-  let booksInfo = ';
+  let booksInfo = '';
   myLibrary.map(item => {
     booksInfo += `<tbody>
                         <tr>
