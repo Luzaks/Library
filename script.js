@@ -76,7 +76,7 @@ function addBookToLibrary(book) {
       getId('pages').value,
       getId('readStatus').checked,
       getId('readStatus1').checked,
-      getId('readStatus2').checked
+      getId('readStatus2').checked,
     ),
   );
   render();
