@@ -22,7 +22,7 @@
   </head>
   <body>
     <header class="d-flex align-items-center justify-content-between">
-      MY LIBRARY
+        <h1 class="my_library_header">MY LIBRARY</h1>
       <div class="dropdown">
         <button onclick="showForm(true)" class="dropbtn">Add Book</button>
       </div>
@@ -31,18 +31,20 @@
       <table class="books-table" id="books-table">
         <thead>
           <tr class="books-header">
-            <th>Title</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Pages</th>
-            <th>Read Status</th>
-            <th>Remove</th>
+              <th></th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>GENRE</th>
+            <th>PAGES</th>
+            <th>READ STATUS</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="books-info"></tbody>
       </table>
 
-      <div class="form-container" id="addBook">
+      <div class="form-container text-center" id="addBook">
+        <h2 class="add_form_header">MY LIBRARY</h2>
         <input class="form_input" type="text" name="title" id="title" placeholder="Title" /><br />
         <input class="form_input"
           type="text"
@@ -53,35 +55,31 @@
         <input class="form_input" type="text" name="genre" id="genre" placeholder="Genre" /><br />
         <input class="form_input" type="text" name="pages" id="pages" placeholder="Pages" /><br />
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus" />
-        <label for="readStatus"> Readed </label><br />
+        <label class="radio-text" for="readStatus"> Readed </label>
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus1" />
-        <label for="readStatus1"> Not Readed</label><br />
+        <label class="radio-text" for="readStatus1"> Not Readed</label>
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus2" />
-        <label for="readStatus2"> Reading</label><br />
-        <button class="dropbtn" onclick="addBookToLibrary();hideForm(true)">
-          Add Book
-        </button>
-        <button type="button" class="btn cancel" onclick="hideForm(true)">
-          Close
+        <label class="radio-text" for="readStatus2"> Reading</label><br />
+        <button class="dropbtn submit-button" onclick="addBookToLibrary();hideForm(true)">
+          Submit
         </button>
       </div>
+      <div class="opacity-background" id="opacity-background" onclick="hideForm(true)"></div>
 
       <div class="form-container" id="change-status-form">
-        <input type="radio" name="readStatus" id="readStatus3" />
-        <label for="readStatus"> Readed </label><br />
-        <input type="radio" name="readStatus" id="readStatus4" />
-        <label for="readStatus1"> Not Readed</label><br />
-        <input type="radio" name="readStatus" id="readStatus5" />
-        <label for="readStatus2"> Reading</label><br />
+        <h2 class="status_form_header d-flex align-self-center">EDIT STATUS</h2>
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus3" />
+        <label class="radio-text" for="readStatus"> Readed </label><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus4" />
+        <label class="radio-text" for="readStatus1"> Not Readed</label><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus5" />
+        <label class="radio-text" for="readStatus2"> Reading</label><br />
         <button
           class="dropbtn"
           id="updateBTN"
           onclick="updateStatus();hideForm()"
         >
-          Update Status
-        </button>
-        <button type="button" class="btn cancel" onclick="hideForm()">
-          Close
+          Update
         </button>
       </div>
     </main>

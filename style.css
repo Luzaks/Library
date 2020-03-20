@@ -26,6 +26,11 @@ header {
     position: sticky;
 }
 
+.my_library_header {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
 /* Main body of the page */
 
 main {
@@ -87,6 +92,12 @@ main {
     display: block;
 }
 
+.add_form_header,
+.status_form_header {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 1rem;
+}
+
 .form-container{
     position: absolute;
     right: 50%;
@@ -96,6 +107,7 @@ main {
     padding: 15px;
     border-radius: 5px;
     display: none;
+    z-index: 1;
 }
 
 .form_input{
@@ -106,12 +118,61 @@ main {
     border-color: rgba(0,0,0,0.2);
 }
 
+#pages {
+    margin-bottom: 7px;
+}
+
 .radio_padding{
  margin-left: 5px;
 }
 
+.radio-text,
+::placeholder {
+    font-size: 12px;
+}
+
+.radio-text {
+    position: relative;
+    top: -3px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+}
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+
+.opacity-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#change-status-form {
+    height: 170px;
+}
+
+#updateBTN {
+    position: absolute;
+    top: 125px;
+    right: 50%;
+    transform: translate(50%, 0%);
+}
+
+.read-status-link,
+.read-status-link:visited {
+    color: #00c9b7;
+    font-weight: bolder;
+}
+
+.read-status-link:hover {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #00c9b7;
+    font-weight: bolder;
+}
 

@@ -26,8 +26,8 @@ function addBookToLibrary(book) {
             myLibrary.length == 0 ? 0 : Math.max(...myLibrary.map((book) => book.book_id)) + 1,
             _id("title").value,
             _id("author").value,
-            _id("pages").value,
             _id("genre").value,
+            _id("pages").value,
             _id("readStatus").checked,
             _id("readStatus1").checked,
             _id("readStatus2").checked
@@ -45,16 +45,17 @@ function cleanForm() {
 }
 
 function showForm(formCreate, id = 1) {
+    _id("opacity-background").style.display = "block";
     formCreate
         ? (_id("addBook").style.display = "block")
         : (_id("change-status-form").style.display = "block");
     _id("updateBTN").setAttribute("onclick", `updateStatus(${id});hideForm()`);
 }
 
-function hideForm(formCreate) {
-    formCreate
-        ? (_id("addBook").style.display = "none")
-        : (_id("change-status-form").style.display = "none");
+function hideForm() {
+    _id("opacity-background").style.display = "none";
+         (_id("addBook").style.display = "none");
+         (_id("change-status-form").style.display = "none");
     cleanForm();
 }
 
@@ -75,6 +76,7 @@ function render() {
     myLibrary.map(item => {
         booksInfo += `<tbody>
                         <tr>
+                            <td><img style="width: 40px; height: 40px;" src="https://img.icons8.com/clouds/100/000000/book.png"/></td>
                             <td>${item.title}</td>
                             <td>${item.author}</td>
                             <td>${item.genre}</td>
