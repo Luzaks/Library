@@ -16,30 +16,30 @@ function getId(id) {
 }
 
 function cleanForm() {
-  getId("title").value = "";
-  getId("author").value = "";
-  getId("pages").value = "";
-  getId("genre").value = "";
-  getId("readStatus").value = "";
+  getId('title').value = '';
+  getId('author').value = '';
+  getId('pages').value = '';
+  getId('genre').value = '';
+  getId('readStatus').value = '';
 }
 
 function showForm(formCreate, id = 1) {
-  getId("opacity-background").style.display = "block";
+  getId('opacity-background').style.display = 'block';
   formCreate
-    ? (getId("addBook").style.display = "block")
-    : (getId("change-status-form").style.display = "block");
-  getId("updateBTN").setAttribute("onclick", `updateStatus(${id});hideForm()`);
+    ? (getId('addBook').style.display = 'block')
+    : (getId('change-status-form').style.display = 'block');
+  getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
 function hideForm() {
-  getId("opacity-background").style.display = "none";
-  getId("addBook").style.display = "none";
-  getId("change-status-form").style.display = "none";
+  getId('opacity-background').style.display = 'none';
+  getId('addBook').style.display = 'none';
+  getId('change-status-form').style.display = 'none';
   cleanForm();
 }
 
 function render() {
-  let booksInfo = "";
+  let booksInfo = '';
   myLibrary.map(item => {
     booksInfo += `<tbody>
                         <tr>
@@ -52,12 +52,12 @@ function render() {
                               item.bookId
                             })' id='status'> ${
       item.readed
-        ? "Read"
+        ? 'Read'
         : item.notReaded
-        ? "Not Read"
+        ? 'Not Read'
         : item.reading
-        ? "Reading"
-        : "Set a Status"
+        ? 'Reading'
+        : 'Set a Status'
     }</a></td>
                             <td>
                                 <img class='remove-book-info' onclick='removeBook(${
@@ -67,14 +67,14 @@ function render() {
                         </tr>
                        </tbody>`;
   });
-  getId("books-info").innerHTML = booksInfo;
+  getId('books-info').innerHTML = booksInfo;
 }
 
 function updateStatus(bookID) {
   const selectedBook = myLibrary.find(elem => elem.bookId === bookID);
-  selectedBook.readed = getId("readStatus3").checked;
-  selectedBook.notReaded = getId("readStatus4").checked;
-  selectedBook.reading = getId("readStatus5").checked;
+  selectedBook.readed = getId('readStatus3').checked;
+  selectedBook.notReaded = getId('readStatus4').checked;
+  selectedBook.reading = getId('readStatus5').checked;
   render();
 }
 
@@ -84,13 +84,13 @@ function addBookToLibrary(book) {
       myLibrary.length == 0
         ? 0
         : Math.max(...myLibrary.map(book => book.bookId)) + 1,
-      getId("title").value,
-      getId("author").value,
-      getId("genre").value,
-      getId("pages").value,
-      getId("readStatus").checked,
-      getId("readStatus1").checked,
-      getId("readStatus2").checked
+      getId('title').value,
+      getId('author').value,
+      getId('genre').value,
+      getId('pages').value,
+      getId('readStatus').checked,
+      getId('readStatus1').checked,
+      getId('readStatus2').checked
     )
   );
   render();
@@ -104,13 +104,13 @@ function removeBook(id) {
 
 function defaultBooks() {
   myLibrary.push(
-    new Book(0, "Silent Hill", "Team Silent", "Games", 180, "Read")
+    new Book(0, 'Silent Hill', 'Team Silent', 'Games', 180, 'Read')
   );
   myLibrary.push(
-    new Book(1, "Resident Evil", "Jill Valentine", "Games", 197, "Not Read")
+    new Book(1, 'Resident Evil', 'Jill Valentine', 'Games', 197, 'Not Read')
   );
   myLibrary.push(
-    new Book(2, "Un homme qui dort", "Georges Perec", "Novel", 300, "Reading")
+    new Book(2, 'Un homme qui dort', 'Georges Perec', 'Novel', 300, 'Reading')
   );
   render();
 }
