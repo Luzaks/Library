@@ -25,7 +25,7 @@ function cleanForm() {
 
 function showForm(formCreate, id = 1) {
   getId('opacity-background').style.display = 'block';
-  formCreate ? (getId('addBook').style.display = 'block') : (getId('change-status-form').style.display = 'block');
+  formCreate ? getId('addBook').style.display = 'block' : getId('change-status-form').style.display = 'block';
   getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
@@ -38,7 +38,7 @@ function hideForm() {
 
 function render() {
   let booksInfo = '';
-  myLibrary.map(item => {
+  myLibrary.map((item) => {
     booksInfo += `<tbody>
                         <tr>
                             <td><img class='bookIcon' src='https://img.icons8.com/clouds/100/000000/book.png'/></td>
@@ -46,25 +46,13 @@ function render() {
                             <td>${item.author}</td>
                             <td>${item.genre}</td>
                             <td>${item.pages}</td>
-                            <td><a href='#' class='read-status-link' onclick='showForm(false, ${
-      item.bookId
-      })' id='status'> ${
-      item.readed
-        ? 'Read'
-        : item.notReaded
-          ? 'Not Read'
-          : item.reading
-            ? 'Reading'
-            : 'Set a Status'
-      }</a></td>
+                            <td><a href='#' class='read-status-link' onclick='showForm(false, ${item.bookId})' id='status'> ${item.readed ? 'Read' : item.notReaded ? 'Not Read' : item.reading ? 'Reading' : 'Set a Status'}</a></td>
                             <td>
-                                <img class='remove-book-info' onclick='removeBook(${
-      item.bookId
-      })' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
+                                <img class='remove-book-info' onclick='removeBook(${ item.bookId})' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
                             </td>
                         </tr>
                        </tbody>`;
-  });
+});
   getId('books-info').innerHTML = booksInfo;
 }
 
@@ -79,9 +67,9 @@ function updateStatus(bookID) {
 function addBookToLibrary(book) {
   myLibrary.push(
     new Book(
-      myLibrary.length == 0
+      myLibrary.length === 0
         ? 0
-        : Math.max(...myLibrary.map(book => book.bookId)) + 1,
+        : Math.max(...myLibrary.map((bookIn) => bookIn.bookId)) + 1,
       getId('title').value,
       getId('author').value,
       getId('genre').value,
