@@ -43,7 +43,7 @@
         <label for="readStatus1"> Not Readed</label><br>
         <input type="radio" name="readStatus" id="readStatus2"/>
         <label for="readStatus2"> Reading</label><br>
-        <button class="dropbtn" onclick="addBookToLibrary();hideForm()">Add Book</button>
+        <button class="dropbtn" onclick="addBookToLibrary();hideForm(true)">Add Book</button>
         <button type="button" class="btn cancel" onclick="hideForm(true)">Close</button>
     </div>
 
@@ -54,7 +54,7 @@
         <label for="readStatus1"> Not Readed</label><br>
         <input type="radio" name="readStatus" id="readStatus5"/>
         <label for="readStatus2"> Reading</label><br>
-        <button class="dropbtn" onclick="updateStatus();hideForm()">Update Status</button>
+        <button class="dropbtn" id="updateBTN" onclick="updateStatus();hideForm()">Update Status</button>
         <button type="button" class="btn cancel" onclick="hideForm()">Close</button>
     </div>
 

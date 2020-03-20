@@ -35,21 +35,21 @@ function cleanForm() {
     document.getElementById('readStatus').value = "";
 }
 
-function showForm(formCreate) {
-    formCreate ? document.getElementById('addBook').style.display = 'block' : document.getElementById('change-status-form').style.display = 'block';
+function showForm(formCreate, id = 1) {
+    formCreate ? document.getElementById('addBook').style.display = 'block' : document.getElementById('change-status-form').style.display = 'block'; document.getElementById('updateBTN').setAttribute("onclick", `updateStatus(${id});hideForm()`);
 }
 
 function hideForm(formCreate) {
-    formCreate ? document.getElementById('addBook').style.display = 'none' : document.getElementById('change-status-form').style.display = 'none';
+    formCreate ? document.getElementById('addBook').style.display = 'none' : document.getElementById('change-status-form').style.display = 'none' ;
+    cleanForm();
 }
 
-function updateStatus(check) {
-    const selected_book = myLibrary.find((elem) => elem.id === check);
+function updateStatus(bookID) {
+    const selected_book = myLibrary.find((elem) => elem.book_id == bookID);
     selected_book.readed = document.getElementById('readStatus3').checked;
     selected_book.notReaded = document.getElementById('readStatus4').checked;
     selected_book.reading = document.getElementById('readStatus5').checked;
     render();
-    console.log(selected_book);
 }
 
 function render() {
@@ -61,9 +61,9 @@ function render() {
                             <td>${item.author}</td>
                             <td>${item.genre}</td>
                             <td>${item.pages}</td>
-                            <td><a href="#" class="read-status-link" onclick="showForm(false)" id="status-${item.book_id}"> ${item.readed ? item.readed : item.notReaded ? item.notReaded : item.reading}</a></td>
+                            <td><a href="#" class="read-status-link" onclick="showForm(false, ${item.book_id})" id="status"> ${item.readed ? "Readed" : item.notReaded ? "Not Readed" : item.reading ? "Reading" : "Set a Status"}</a></td>
                             <td>
-                                <img class="remove-book-info" onclick="removeBook(${item.book_id})" id="remove-book-btn-${item.book_id}" style="width: 30px; height: 30px; cursor: pointer" src="https://img.icons8.com/plasticine/100/000000/filled-trash.png" alt="remove-button"/>
+                                <img class="remove-book-info" onclick="removeBook(${item.book_id})" id="remove-book-btn" style="width: 30px; height: 30px; cursor: pointer" src="https://img.icons8.com/plasticine/100/000000/filled-trash.png" alt="remove-button"/>
                             </td>
                         </tr>
                        </tbody>`;
