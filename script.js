@@ -25,7 +25,7 @@ function cleanForm() {
 
 function showForm(formCreate, id = 1) {
   getId('opacity-background').style.display = 'block';
-  formCreate ? getId('addBook').style.display = 'block' : getId('change-status-form').style.display = 'block';
+  formCreate === true ? getId('addBook').style.display = 'block' : getId('change-status-form').style.display = 'block';
   getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
@@ -38,7 +38,7 @@ function hideForm() {
 
 function render() {
   let booksInfo = '';
-  myLibrary.map((item) => {
+  myLibrary.forEach((item) => {
     booksInfo += `<tbody>
                         <tr>
                             <td><img class='bookIcon' src='https://img.icons8.com/clouds/100/000000/book.png'/></td>
