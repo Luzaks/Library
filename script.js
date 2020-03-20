@@ -52,7 +52,7 @@ function render() {
                             </td>
                         </tr>
                        </tbody>`;
-});
+  });
   getId('books-info').innerHTML = booksInfo;
 }
 
@@ -76,7 +76,7 @@ function addBookToLibrary(book) {
       getId('pages').value,
       getId('readStatus').checked,
       getId('readStatus1').checked,
-      getId('readStatus2').checked,
+      getId('readStatus2').checked
     )
   );
   render();
@@ -90,13 +90,13 @@ function removeBook(id) {
 
 function defaultBooks() {
   myLibrary.push(
-    new Book(0, 'Silent Hill', 'Team Silent', 'Games', 180, 'Read',)
+    new Book(0, 'Silent Hill', 'Team Silent', 'Games', 180, 'Read')
   );
   myLibrary.push(
-    new Book(1, 'Resident Evil', 'Jill Valentine', 'Games', 197, 'Not Read',)
+    new Book(1, 'Resident Evil', 'Jill Valentine', 'Games', 197, 'Not Read')
   );
   myLibrary.push(
-    new Book(2, 'Un homme qui dort', 'Georges Perec', 'Novel', 300, 'Reading',)
+    new Book(2, 'Un homme qui dort', 'Georges Perec', 'Novel', 300, 'Reading')
   );
   render();
 }
