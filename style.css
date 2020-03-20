@@ -14,8 +14,6 @@ html {
     letter-spacing: 0.1rem;
 }
 
-/* Header Style */
-
 header {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
@@ -31,13 +29,9 @@ header {
     margin: 0;
 }
 
-/* Main body of the page */
-
 main {
     padding-top: 20px;
 }
-
-/* Table for stored books */
 
 .books-table {
     width: 70%;
@@ -54,8 +48,6 @@ main {
 .books-table td {
     font-size: 0.8em;
 }
-
-/* Dropdown Button */
 
 .dropbtn {
     background-color: #00c9b7;
