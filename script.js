@@ -49,20 +49,20 @@ function render() {
                             <td>${item.genre}</td>
                             <td>${item.pages}</td>
                             <td><a href='#' class='read-status-link' onclick='showForm(false, ${
-                              item.bookId
-                            })' id='status'> ${
+      item.bookId
+      })' id='status'> ${
       item.readed
         ? 'Read'
         : item.notReaded
-        ? 'Not Read'
-        : item.reading
-        ? 'Reading'
-        : 'Set a Status'
-    }</a></td>
+          ? 'Not Read'
+          : item.reading
+            ? 'Reading'
+            : 'Set a Status'
+      }</a></td>
                             <td>
                                 <img class='remove-book-info' onclick='removeBook(${
-                                  item.bookId
-                                })' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
+      item.bookId
+      })' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
                             </td>
                         </tr>
                        </tbody>`;
