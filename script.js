@@ -76,14 +76,14 @@ function render() {
     myLibrary.map(item => {
         booksInfo += `<tbody>
                         <tr>
-                            <td><img style="width: 40px; height: 40px;" src="https://img.icons8.com/clouds/100/000000/book.png"/></td>
+                            <td><img class="bookIcon" src="https://img.icons8.com/clouds/100/000000/book.png"/></td>
                             <td>${item.title}</td>
                             <td>${item.author}</td>
                             <td>${item.genre}</td>
                             <td>${item.pages}</td>
-                            <td><a href="#" class="read-status-link" onclick="showForm(false, ${item.book_id})" id="status"> ${item.readed? "Readed" : item.notReaded ? "Not Readed" : item.reading ? "Reading" : "Set a Status"}</a></td>
+                            <td><a href="#" class="read-status-link" onclick="showForm(false, ${item.book_id})" id="status"> ${item.readed? "Read" : item.notReaded ? "Not Read" : item.reading ? "Reading" : "Set a Status"}</a></td>
                             <td>
-                                <img class="remove-book-info" onclick="removeBook(${item.book_id})" id="remove-book-btn" style="width: 30px; height: 30px; cursor: pointer" src="https://img.icons8.com/plasticine/100/000000/filled-trash.png" alt="remove-button"/>
+                                <img class="remove-book-info" onclick="removeBook(${item.book_id})" id="remove-book-btn" src="https://img.icons8.com/plasticine/100/000000/filled-trash.png" alt="remove-button"/>
                             </td>
                         </tr>
                        </tbody>`;
@@ -99,13 +99,13 @@ function removeBook(id) {
 
 function defaultBooks() {
     myLibrary.push(
-        new Book(0, "Silent Hill", "Team Silent", "Games", 180, "Readed")
+        new Book(0, "Silent Hill", "Team Silent", "Games", 180, "Read")
     );
     myLibrary.push(
-        new Book(1, "Resident Evil", "Jill Valentine", "Games", 197, "Not Readed")
+        new Book(1, "Resident Evil", "Jill Valentine", "Games", 197, "Not Read")
     );
     myLibrary.push(
-        new Book(2, "Un homme qui dort", "Georges Perec", "Novel", 300, "Readed")
+        new Book(2, "Un homme qui dort", "Georges Perec", "Novel", 300, "Reading")
     );
     render();
 }

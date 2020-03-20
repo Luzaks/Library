@@ -118,7 +118,7 @@ main {
     border-color: rgba(0,0,0,0.2);
 }
 
-#pages {
+.pages {
     margin-bottom: 7px;
 }
 
@@ -152,13 +152,13 @@ main {
     display: none;
 }
 
-#change-status-form {
-    height: 170px;
+.change-status-form {
+    height: 175px;
 }
 
-#updateBTN {
+.updateBTN {
     position: absolute;
-    top: 125px;
+    top: 130px;
     right: 50%;
     transform: translate(50%, 0%);
 }
@@ -174,5 +174,16 @@ main {
     text-decoration-style: dotted;
     text-decoration-color: #00c9b7;
     font-weight: bolder;
+}
+
+.bookIcon{
+    width: 40px; 
+    height: 40px;
+}
+
+.remove-book-info{
+    width: 30px; 
+    height: 30px;
+    cursor: pointer
 }
 

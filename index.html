@@ -53,11 +53,11 @@
           placeholder="Author"
         /><br />
         <input class="form_input" type="text" name="genre" id="genre" placeholder="Genre" /><br />
-        <input class="form_input" type="text" name="pages" id="pages" placeholder="Pages" /><br />
+        <input class="form_input pages" type="text" name="pages" id="pages" placeholder="Pages" /><br />
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus" />
-        <label class="radio-text" for="readStatus"> Readed </label>
+        <label class="radio-text" for="readStatus"> Read </label>
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus1" />
-        <label class="radio-text" for="readStatus1"> Not Readed</label>
+        <label class="radio-text" for="readStatus1"> Not Read</label>
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus2" />
         <label class="radio-text" for="readStatus2"> Reading</label><br />
         <button class="dropbtn submit-button" onclick="addBookToLibrary();hideForm(true)">
@@ -66,16 +66,16 @@
       </div>
       <div class="opacity-background" id="opacity-background" onclick="hideForm(true)"></div>
 
-      <div class="form-container" id="change-status-form">
+      <div class="form-container change-status-form" id="change-status-form">
         <h2 class="status_form_header d-flex align-self-center">EDIT STATUS</h2>
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus3" />
-        <label class="radio-text" for="readStatus"> Readed </label><br />
+        <label class="radio-text" for="readStatus"> Read </label><br />
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus4" />
-        <label class="radio-text" for="readStatus1"> Not Readed</label><br />
+        <label class="radio-text" for="readStatus1"> Not Read</label><br />
         <input class="radio_padding" type="radio" name="readStatus" id="readStatus5" />
         <label class="radio-text" for="readStatus2"> Reading</label><br />
         <button
-          class="dropbtn"
+          class="dropbtn updateBTN"
           id="updateBTN"
           onclick="updateStatus();hideForm()"
         >
