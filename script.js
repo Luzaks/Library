@@ -23,7 +23,7 @@ function Book(
 function addBookToLibrary(book) {
     myLibrary.push(
         new Book(
-            Math.max(...library.map((book) => book.id)) + 1,
+            myLibrary.length == 0 ? 0 : Math.max(...myLibrary.map((book) => book.book_id)) + 1,
             _id("title").value,
             _id("author").value,
             _id("pages").value,

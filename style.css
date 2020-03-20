@@ -98,13 +98,18 @@ main {
     display: none;
 }
 
-input{
+.form_input{
     width: 300px;
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
     border-color: rgba(0,0,0,0.2);
 }
+
+.radio_padding{
+ margin-left: 5px;
+}
+
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 

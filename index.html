@@ -43,20 +43,20 @@
       </table>
 
       <div class="form-container" id="addBook">
-        <input type="text" name="title" id="title" placeholder="Title" /><br />
-        <input
+        <input class="form_input" type="text" name="title" id="title" placeholder="Title" /><br />
+        <input class="form_input"
           type="text"
           name="author"
           id="author"
           placeholder="Author"
         /><br />
-        <input type="text" name="genre" id="genre" placeholder="Genre" /><br />
-        <input type="text" name="pages" id="pages" placeholder="Pages" /><br />
-        <input type="radio" name="readStatus" id="readStatus" />
+        <input class="form_input" type="text" name="genre" id="genre" placeholder="Genre" /><br />
+        <input class="form_input" type="text" name="pages" id="pages" placeholder="Pages" /><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus" />
         <label for="readStatus"> Readed </label><br />
-        <input type="radio" name="readStatus" id="readStatus1" />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus1" />
         <label for="readStatus1"> Not Readed</label><br />
-        <input type="radio" name="readStatus" id="readStatus2" />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus2" />
         <label for="readStatus2"> Reading</label><br />
         <button class="dropbtn" onclick="addBookToLibrary();hideForm(true)">
           Add Book
@@ -66,7 +66,7 @@
         </button>
       </div>
 
-      <div class="form-container update-form" id="change-status-form">
+      <div class="form-container" id="change-status-form">
         <input type="radio" name="readStatus" id="readStatus3" />
         <label for="readStatus"> Readed </label><br />
         <input type="radio" name="readStatus" id="readStatus4" />
