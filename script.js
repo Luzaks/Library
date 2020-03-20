@@ -48,7 +48,7 @@ function render() {
                             <td>${item.pages}</td>
                             <td><a href='#' class='read-status-link' onclick='showForm(false, ${item.bookId})' id='status'> ${item.readed ? 'Read' : item.notReaded ? 'Not Read' : item.reading ? 'Reading' : 'Set a Status'}</a></td>
                             <td>
-                                <img class='remove-book-info' onclick='removeBook(${ item.bookId})' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
+                                <img class='remove-book-info' onclick='removeBook(${item.bookId})' id='remove-book-btn' src='https://img.icons8.com/plasticine/100/000000/filled-trash.png' alt='remove-button'/>
                             </td>
                         </tr>
                        </tbody>`;
@@ -76,7 +76,7 @@ function addBookToLibrary(book) {
       getId('pages').value,
       getId('readStatus').checked,
       getId('readStatus1').checked,
-      getId('readStatus2').checked
+      getId('readStatus2').checked,
     )
   );
   render();
@@ -90,13 +90,13 @@ function removeBook(id) {
 
 function defaultBooks() {
   myLibrary.push(
-    new Book(0, 'Silent Hill', 'Team Silent', 'Games', 180, 'Read')
+    new Book(0, 'Silent Hill', 'Team Silent', 'Games', 180, 'Read',)
   );
   myLibrary.push(
-    new Book(1, 'Resident Evil', 'Jill Valentine', 'Games', 197, 'Not Read')
+    new Book(1, 'Resident Evil', 'Jill Valentine', 'Games', 197, 'Not Read',)
   );
   myLibrary.push(
-    new Book(2, 'Un homme qui dort', 'Georges Perec', 'Novel', 300, 'Reading')
+    new Book(2, 'Un homme qui dort', 'Georges Perec', 'Novel', 300, 'Reading',)
   );
   render();
 }
