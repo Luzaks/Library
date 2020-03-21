@@ -65,7 +65,7 @@ function updateStatus(bookID) {
   render();
 }
 
-function addBookToLibrary(book) {
+function addBookToLibrary() {
   myLibrary.push(
     new Book(
       myLibrary.length === 0
