@@ -24,9 +24,11 @@ function cleanForm() {
 }
 
 function showForm(formCreate, id = 1) {
-  getId('addBook').style.display = 'block';
-  getId('change-status-form').style.display = 'block';
-  getId('opacity-background').style.display = 'block';
+  if (formCreate) {
+    getId('addBook').style.display = 'block';
+  } else {
+    getId('change-status-form').style.display = 'block';
+  }
   getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
@@ -81,6 +83,12 @@ function addBookToLibrary() {
     ),
   );
   render();
+}
+
+function checkCreatedValid() {
+  if (getId('title').value === true) {
+    addBookToLibrary();
+  }
 }
 
 function removeBook(id) {
