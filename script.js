@@ -86,7 +86,7 @@ function addBookToLibrary() {
 }
 
 function checkCreatedValid() {
-  if (getId('title').value === true) {
+  if (getId('title').value !== '') {
     addBookToLibrary();
   }
 }
