@@ -29,6 +29,7 @@ function showForm(formCreate, id = 1) {
   } else {
     getId('change-status-form').style.display = 'block';
   }
+  getId('opacity-background').style.display = 'block';
   getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
