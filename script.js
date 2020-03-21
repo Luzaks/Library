@@ -24,8 +24,9 @@ function cleanForm() {
 }
 
 function showForm(formCreate, id = 1) {
+  getId('addBook').style.display = 'block';
+  getId('change-status-form').style.display = 'block';
   getId('opacity-background').style.display = 'block';
-  formCreate === true ? getId('addBook').style.display = 'block' : getId('change-status-form').style.display = 'block';
   getId('updateBTN').setAttribute('onclick', `updateStatus(${id});hideForm()`);
 }
 
