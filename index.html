@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LibraryTrial</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Subrayada&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/f1eb37ec03.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="d-flex align-items-center justify-content-between">
+        <h1 class="my_library_header">MY LIBRARY</h1>
+      <div class="dropdown">
+        <button onclick="showForm(true)" class="dropbtn">Add Book</button>
+      </div>
+    </header>
+    <main class="d-flex align-items-center justify-content-center">
+      <table class="books-table" id="books-table">
+        <thead>
+          <tr class="books-header">
+              <th></th>
+            <th>TITLE</th>
+            <th>AUTHOR</th>
+            <th>GENRE</th>
+            <th>PAGES</th>
+            <th>READ STATUS</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="books-info"></tbody>
+      </table>
+
+      <div class="form-container text-center" id="addBook">
+        <h2 class="add_form_header">MY LIBRARY</h2>
+        <input class="form_input" type="text" name="title" id="title" placeholder="Title" required/><br />
+        <input class="form_input"
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+        /><br />
+        <input class="form_input" type="text" name="genre" id="genre" placeholder="Genre" /><br />
+        <input class="form_input pages" type="number" name="pages" id="pages" placeholder="Pages" /><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus" />
+        <label class="radio-text" for="readStatus"> Read </label>
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus1" />
+        <label class="radio-text" for="readStatus1"> Not Read</label>
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus2" />
+        <label class="radio-text" for="readStatus2"> Reading</label><br />
+        <button class="dropbtn submit-button" onclick="checkCreatedValid();hideForm(true)">
+          Submit
+        </button>
+      </div>
+      <div class="opacity-background" id="opacity-background" onclick="hideForm(true)"></div>
+
+      <div class="form-container change-status-form" id="change-status-form">
+        <h2 class="status_form_header d-flex align-self-center">EDIT STATUS</h2>
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus3" />
+        <label class="radio-text" for="readStatus"> Read </label><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus4" />
+        <label class="radio-text" for="readStatus1"> Not Read</label><br />
+        <input class="radio_padding" type="radio" name="readStatus" id="readStatus5" />
+        <label class="radio-text" for="readStatus2"> Reading</label><br />
+        <button
+          class="dropbtn updateBTN"
+          id="updateBTN"
+          onclick="updateStatus();hideForm()"
+        >
+          Update
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
